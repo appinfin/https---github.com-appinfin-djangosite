@@ -1,0 +1,14 @@
+{% extends 'school/base.html'%}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+<!-- Цикл вывода товаров -->
+<ul>
+    {% for p in product %}
+    <li>
+        <h2>{{p.prod_name}}
+    </li>
+    {% endfor %}
+
+{% endblock content %}

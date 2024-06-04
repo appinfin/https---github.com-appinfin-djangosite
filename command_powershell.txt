@@ -1,0 +1,20 @@
+python -m venv /path/to/new/virtual/environment
+или при запуске в текущей дериктории python -m venv .venv
+
+pip install django
+
+django-admin startproject [name_project]
+manage.ру startapp [name_app]
+py manage.py - основной файл с командами
+
+py manage.py sqlmigrate
+
+--в питоне работа с CRUD--
+from school.models import Product
+
+py manage.py runserver - запуск сервера
+
+py manage.py shell - для работы с приожением
+from school.models import Product
+
+manage.ру createsuperuser
