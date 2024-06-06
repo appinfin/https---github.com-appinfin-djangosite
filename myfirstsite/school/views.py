@@ -31,11 +31,11 @@ def archive(request, year):
         return redirect ('home', permanent = True) #301 URL перемещён постоянно
     return HttpResponse(f"АРХИВ - {year}")
 
-def products(request, prodid): #HttpRequest
+def products(request, products_id): #HttpRequest
     if(request.GET):
         print(request.GET)
     
-    return HttpResponse(f"products page {prodid}")
+    return HttpResponse(f"products page {products_id}")
 
 def pageNotFound(request, exception): #HttpRequest
     return HttpResponseNotFound(f"<H1>PAGE NOT FOUND</H1>")
