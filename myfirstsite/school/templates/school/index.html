@@ -1,8 +1,9 @@
 {% extends 'school/base.html'%}
+{% load school_tags %}
 
 {% block content %}
 <h1>{{title}}</h1>
-
+<h2>{% get_product %}</h2>
 <!-- Цикл вывода товаров -->
 <ul>
     {% for p in product %}
