@@ -9,7 +9,8 @@
 <ul>
     {% for p in product %}
     <li>
-        {{p.prod_name}}, {{p.price}}
+        {{p.prod_name}}, {{p.price}},
+        <img src="{{p.foto.url}}"
     </li>
     {% endfor %}
 
