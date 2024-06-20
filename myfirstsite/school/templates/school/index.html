@@ -6,12 +6,16 @@
 <h2>{% get_product as product%}</h2>
 
 <!-- Цикл вывода списка товаров -->
-<ul>
-    {% for p in product %}
+{% for p in product %}
+
+<ul class="product">
+
     <li>
-        {{p.prod_name}}, {{p.price}},
         <img src="{{p.foto.url}}">
+        {{p.prod_name}}, {{p.price}},
     </li>
-    {% endfor %}
+
+</ul>
+{% endfor %}
 
 {% endblock content %}
