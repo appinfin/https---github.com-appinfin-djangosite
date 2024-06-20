@@ -10,8 +10,8 @@ class Product(models.Model):
     foto = models.ImageField(upload_to='photos/%Y/%m/%d/',
                              null=True,
                              blank=True,
-                             width_field=width,
-                             height_field=heigth)
+                             width_field='width',
+                             height_field='heigth')
     
     def __str__(self) -> str:
         return super().__str__()
