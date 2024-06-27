@@ -20,8 +20,11 @@ class Product(models.Model):
     def __unicode__(self):
         return self.prod_name
     
-    def __str__(self) -> str:
-        return super().__str__()
+    # def __str__(self) -> str:
+    #     return super().__str__()
+    
+    def __str__(self):
+        return self.prod_name
     
     class Meta:
         verbose_name='Товар'
