@@ -15,7 +15,7 @@
             <img src="{{p.foto.url}}">
         </div>
 
-        <a href="{% url 'product_description' p.id %}">{{p.prod_name}}, {{p.price}}</a> 
+        <a href="{{ p.get_absolute_url }}">{{p.prod_name}}, {{p.price}}</a> 
     </li>
 </div>
 </ul>
