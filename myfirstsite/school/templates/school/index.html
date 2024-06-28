@@ -3,8 +3,8 @@
 
 {% block content %}
 <h1>{{title}}</h1>
-<h2>{% get_product as product%}</h2>
 
+{% get_product as product%}
 <!-- Цикл вывода списка товаров -->
 {% for p in product %}
 
@@ -14,7 +14,8 @@
         <div>
             <img src="{{p.foto.url}}">
         </div>
-        <a href="">{{p.prod_name}}, {{p.price}}</a> 
+
+        <a href="{% url 'product_description' %}">{{p.prod_name}}, {{p.price}}</a> 
     </li>
 </div>
 </ul>

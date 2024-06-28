@@ -16,12 +16,10 @@ class Product(models.Model):
                              blank=True,
                              width_field='width',
                              height_field='heigth')
+    description = models.TextField('Описание', max_length=300, null=True, blank=True)
     
     def __unicode__(self):
         return self.prod_name
-    
-    # def __str__(self) -> str:
-    #     return super().__str__()
     
     def __str__(self):
         return self.prod_name
