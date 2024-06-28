@@ -10,6 +10,6 @@ urlpatterns = [
     path('contact/', contact, name='contact'),
     path('login/', login, name='login'),
     path('products/<int:products_id>/', products, name='products'),
-    path('product_description/<int:prodid/>', product_description, name='product_description'),
+    path('product_description/<int:prodid>/', product_description, name='product_description'),
     re_path(r'^archive/(?P<year>[0-9]{4})/', archive, name='archive'), #путь с регуляркой
 ]
