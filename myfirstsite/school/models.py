@@ -4,6 +4,7 @@ from django.urls import reverse
 # # Create your models here.
 class Product(models.Model):
     prod_name = models.CharField(max_length=64, verbose_name='Наименование товара')
+    slag = models.SlugField('URL', max_length=64, unique=True, db_index=True, null=True )
     price = models.DecimalField(max_digits=7,
                                 decimal_places=2,
                                 max_length=9,
