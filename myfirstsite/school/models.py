@@ -3,14 +3,20 @@ from django.urls import reverse
 
 # # Create your models here.
 class Product(models.Model):
-    prod_name = models.CharField(max_length=64, verbose_name='Наименование товара')
-    slag = models.SlugField('URL', max_length=64, unique=True, db_index=True, null=True )
+    prod_name = models.CharField(max_length=64,
+                                 verbose_name='Наименование товара')
+    slag = models.SlugField('URL',
+                            max_length=64,
+                            unique=True,
+                            db_index=True,
+                            null=False )
     price = models.DecimalField(max_digits=7,
                                 decimal_places=2,
                                 max_length=9,
                                 null=True, blank=True,
                                 verbose_name='Цена')
-    in_stock = models.BooleanField(default=False, verbose_name='Наличие')
+    in_stock = models.BooleanField(default=False,
+                                   verbose_name='Наличие')
     width = models.PositiveSmallIntegerField()
     heigth = models.PositiveSmallIntegerField()
     foto = models.ImageField(upload_to='photos/%Y/%m/%d/',

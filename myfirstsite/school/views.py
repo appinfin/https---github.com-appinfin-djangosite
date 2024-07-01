@@ -1,12 +1,14 @@
 from django.http import Http404, HttpResponse, HttpResponseNotFound
 from django.shortcuts import redirect, render
-from .models import *
+from .models import Product
+from django.views.generic.edit import CreateView
 
 # Create your views here.
 # Функции представления страниц
 
 menu = [{'title' : "О сайте", 'url_name' : 'about'},
-        {'title' : "Добавить статью", 'url_name' : 'add_post'},
+        # {'title' : "Добавить статью", 'url_name' : 'add_post'},
+        {'title' : "Добавить товар", 'url_name' : 'add_product'},
         {'title' : "Обратная связь", 'url_name' : 'contact'},
         {'title' :  "Войти", 'url_name' : 'login'}
          ]
@@ -52,3 +54,14 @@ def product_description(request, prodid):
                'url_name' : 'product_description',
                'p_discription' : p_discription}
     return render(request, 'school/product_description.html', context=context)
+
+
+from .forms import ProductForm
+class ProductCreateView(CreateView):
+    template_name = 'school/create.html'
+    form_class = ProductForm
+    success_url = 'school/create.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context['rubrics'] = Rubric.objects.all()
+        return context
