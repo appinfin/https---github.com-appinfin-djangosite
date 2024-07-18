@@ -3,15 +3,22 @@
 
 {% block content %}
 <h1>{{title}}</h1>
-<h2>{% get_product as product%}</h2>
 
+{% get_product as product%}
 <!-- Цикл вывода списка товаров -->
-<ul>
-    {% for p in product %}
+{% for p in product %}
+
+<ul class="product">
+<div style="border: solid 1px black;">
     <li>
-        {{p.prod_name}}, {{p.price}},
-        <img src="{{p.foto.url}}"
+        <div>
+            <img src="{{p.foto.url}}">
+        </div>
+
+        <a href="{{ p.get_absolute_url }}">{{p.prod_name}}, {{p.price}}</a> 
     </li>
-    {% endfor %}
+</div>
+</ul>
+{% endfor %}
 
 {% endblock content %}

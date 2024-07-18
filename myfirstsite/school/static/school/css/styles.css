@@ -41,6 +41,10 @@ p.link-read-post a {
 	text-decoration: none;
 }
 
+ul.product {
+	list-style: none;
+}
+ 
 div.article-panel {
     background: #eee;
     padding: 5px 10px 5px 10px;
@@ -84,7 +88,9 @@ ul.list-articles li {
 	background: url('../images/logo.png') no-repeat 10px 5px;
 	width: 70px;
 	height: 60px;
+	border: solid 2px;
 }
+
 
 ul.mainmenu {
 	list-style: none;

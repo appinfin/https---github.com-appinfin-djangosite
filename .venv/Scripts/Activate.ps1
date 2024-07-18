@@ -1,6 +1,9 @@
 <#
 .Synopsis
 Activate a Python virtual environment for the current PowerShell session.
+E:\My_app\djangosite\.venv\Scripts
+E:\My_app\djangosite\myfirstsite
+py manage.py runserver
 
 .Description
 Pushes the python executable for a virtual environment to the front of the
