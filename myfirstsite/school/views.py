@@ -1,5 +1,5 @@
 from django.http import Http404, HttpResponse, HttpResponseNotFound
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from .models import Product
 from django.views.generic.edit import CreateView
 
@@ -13,6 +13,7 @@ menu = [{'title' : "О сайте", 'url_name' : 'about'},
         {'title' :  "Войти", 'url_name' : 'login'}
          ]
 context={'menu': menu, 'title': 'Главная страница'}
+
 def index(request):
     product = Product.objects.all()
     context={'menu': menu, 'title': 'Главная страница', 'product' : product}
@@ -28,9 +29,9 @@ def archive(request, year):
         return redirect ('home', permanent = True) #301 URL перемещён постоянно
     return HttpResponse(f"АРХИВ - {year}")
 
-def products(request, products_id): #HttpRequest
-    if(request.GET):
-        print(request.GET)
+# def products(request, products_id): #HttpRequest
+#     if(request.GET):
+#         print(request.GET)
     
     return HttpResponse(f"products page {products_id}")
 
@@ -47,9 +48,10 @@ def login(request):
     return HttpResponse("Войти")
 
 def product_description(request, prodid):
-    product = Product.objects.all()
-    p = product.get(pk=prodid)
-    p_discription = p.description
+    product = get_object_or_404(Product, slag=prodid)
+    # product = Product.objects.all()
+    # p = product.get(slag=prodid)
+    p_discription = product.description
     context = {'title' : "Карточка товара",
                'url_name' : 'product_description',
                'p_discription' : p_discription}
