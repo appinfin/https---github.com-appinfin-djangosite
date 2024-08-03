@@ -1,4 +1,15 @@
-<html lang="en">
+{% extends 'school/base.html'%}
+
+{% block content %}
+<h1>{{title}}</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Добавить">
+    </form>
+{% endblock content %}
+
+<!-- <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,4 +24,4 @@
     </form>
     
 </body>
-</html>
+</html> -->

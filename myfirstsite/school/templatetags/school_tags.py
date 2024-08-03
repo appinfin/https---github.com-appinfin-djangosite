@@ -1,5 +1,5 @@
 from django import template
-from school.models import *
+from school.models import Product
 
 register = template.Library()
 

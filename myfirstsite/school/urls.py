@@ -4,10 +4,11 @@ from .views import *
 # допустимые адреса
 
 urlpatterns = [
-    path('', index, name='home'),
+    # path('', index, name='home'),
+    path('', ProductHome.as_view(), name='home'),
     path('about/', about, name='about'),
     # path('add_post/', add_post, name='add_post'),
-    path('add_product', ProductCreateView.as_view(), name='add_product'),
+    path('add_product/', ProductCreateView.as_view(), name='add_product'),
     path('contact/', contact, name='contact'),
     path('login/', login, name='login'),
     # path('products/<int:products_id>/', products, name='products'),
