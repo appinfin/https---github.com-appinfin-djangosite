@@ -71,11 +71,10 @@ def product_description(request, prodid):
 
 from .forms import ProductForm
 class ProductCreateView(CreateView):
-    # model = Product
     form_class = ProductForm
     template_name = 'school/create.html'
     # success_url = reverse_lazy('home')
-    success_url = 'school/create.html'
+    # success_url = 'school/create.html'
     
     # def get_context_data(self, **kwargs):
     def get_context_data(self, *, object_list=None, **kwargs):
