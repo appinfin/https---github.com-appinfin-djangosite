@@ -14,7 +14,7 @@ menu = [{'title' : "О сайте", 'url_name' : 'about'},
         {'title' : "Обратная связь", 'url_name' : 'contact'},
         {'title' :  "Войти", 'url_name' : 'login'}
          ]
-context = {'menu': menu, 'title': 'Главная страница'}
+# context = {'menu': menu, 'title': 'Главная страница'}
 
 # def index(request):
 #     product = Product.objects.all()
@@ -75,7 +75,7 @@ class ProductCreateView(CreateView):
     form_class = ProductForm
     template_name = 'school/create.html'
     # success_url = reverse_lazy('home')
-    success_url = 'school/create.html'
+    # success_url = 'school/create.html'
     
     # def get_context_data(self, **kwargs):
     def get_context_data(self, *, object_list=None, **kwargs):
